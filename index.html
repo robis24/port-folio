@@ -7,10 +7,23 @@
 
     </style>
   </head>
-  <body>
+  <body class="cms-tags">
 
 
 
-    halo  
+    halo
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      !function(config) {
+        $('.cms-tag').each(function() {
+            var tagName = $(this).data('tags/header');
+            $(this).load(config.prefix + tagName + '.html?cb=' + (new Date().getTime()));
+          });
+      }({
+          prefix: 'https://raw.githubusercontent.com/robis24/port-folio/master/'
+         });
+    });
+  </script>
 </html>

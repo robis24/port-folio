@@ -11,6 +11,10 @@
       ul {
         list-style: none;
       }
+      .post-image{
+        width: 5em;
+        height: 5em;
+      }
     </style>
   </head>
   <body>
@@ -65,23 +69,23 @@
             let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
             var tagName = $(this).data('cms');
             var jsonUri =  prefix + tagName + '.json?cb=' + (new Date().getTime());
-
+            var elem = $(this);
              $.ajax({url:jsonUri, dataType:'json'}).done(
-               data => {
+               function(data) {
                  tagName === 'tags/menu' ?
-                 data.menu.map((item) => {
-                    $(this).find('ul').append('<li><a href=#'+item+'>'+item+'</a></li>');
+                 data.menu.map(function(item) {
+                    elem.find('ul').append('<li><a href=#'+item+'>'+item+'</a></li>');
                  })
                  :
-                 data.posts.map((item) => {
-                 $(this).append(item.title+'<br>'+item.cat)
-               })
+                 data.posts.map(function(item) {
+                   elem.append('<article><h1>'+item.title+'</h1>'+item.cat+'<div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+                 })
                 // console.log(data.menu);
                }
              )
-             .error( data =>
-               console.log('eroor', data)
-             )
+             .error( function(data) {
+               console.log('eroor', data);
+             })
 
         });
       }

@@ -16,10 +16,10 @@
   <body>
     <nav class="cms" data-cms="tags/menu">
       <ul>
-        <li></li>
+
       </ul>
     </nav>
-    <div class="2cms" data-cms="tags/header">
+    <div class="cms" data-cms="tags/posts">
 
     </div>
 
@@ -31,22 +31,22 @@
 
 
   <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded",() => {
-
-      document.querySelectorAll('.cms').forEach(item => {
-        let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
-        let tagName = item.getAttribute('data-cms');
-         //  fetch(prefix + tagName + '.json?cb=' + (new Date().getTime()))
-        fetch(`${prefix}${tagName}.json?cb=${(new Date().getTime())}`)
-
-          .then(response => {
-            return response.json();
-          })
-          .then(myJson => {
-            myJson.menu.map((item) => console.log(item));
-          })
-      });
-    });
+    // document.addEventListener("DOMContentLoaded",() => {
+    //
+    //   document.querySelectorAll('.cms').forEach(item => {
+    //     let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
+    //     let tagName = item.getAttribute('data-cms');
+    //      //  fetch(prefix + tagName + '.json?cb=' + (new Date().getTime()))
+    //     fetch(`${prefix}${tagName}.json?cb=${(new Date().getTime())}`)
+    //
+    //       .then(response => {
+    //         return response.json();
+    //       })
+    //       .then(myJson => {
+    //       //  myJson.menu.map((item) => console.log(item));
+    //       })
+    //   });
+    // });
 
 
 
@@ -62,10 +62,25 @@
 
       function loading() {
         $('.cms').each(function() {
-            let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/'
+            let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
             var tagName = $(this).data('cms');
-            $(this).load(prefix + tagName + '.json?cb=' + (new Date().getTime()));
-          });
+            var jsonUri =  prefix + tagName + '.json?cb=' + (new Date().getTime());
+
+             $.ajax({url:jsonUri, dataType:'json'}).done(
+               data => {
+                 tagName === 'tags/menu' ?
+                 data.menu.map((item) => {
+                    $(this).find('ul').append('<li><a href=#'+item+'>'+item+'</a></li>');
+                 }):
+                 $(this).find('ul').append('bull')
+                // console.log(data.menu);
+               }
+             )
+             .error( data =>
+               console.log('eroor', data)
+             )
+
+        });
       }
          loading()
     });

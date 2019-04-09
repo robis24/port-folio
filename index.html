@@ -4,25 +4,67 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-
+      html, body {
+        padding:0;
+        margin:0;
+      }
+      ul {
+        list-style: none;
+      }
     </style>
   </head>
-  <body class="cms" data-cms="tags/header">
+  <body>
+    <nav class="cms" data-cms="tags/menu">
+      <ul>
+        <li></li>
+      </ul>
+    </nav>
+    <div class="2cms" data-cms="tags/header">
 
+    </div>
 
 
     halo
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
   <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",() => {
+
+      document.querySelectorAll('.cms').forEach(item => {
+        let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
+        let tagName = item.getAttribute('data-cms');
+         //  fetch(prefix + tagName + '.json?cb=' + (new Date().getTime()))
+        fetch(`${prefix}${tagName}.json?cb=${(new Date().getTime())}`)
+
+          .then(response => {
+            return response.json();
+          })
+          .then(myJson => {
+            myJson.menu.map((item) => console.log(item));
+          })
+      });
+    });
+
+
+
+
+
+
+
+
 
     $(document).ready(function() {
+
+
 
       function loading() {
         $('.cms').each(function() {
             let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/'
             var tagName = $(this).data('cms');
-            $(this).load(prefix + tagName + '.html?cb=' + (new Date().getTime()));
+            $(this).load(prefix + tagName + '.json?cb=' + (new Date().getTime()));
           });
       }
          loading()

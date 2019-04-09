@@ -71,8 +71,11 @@
                  tagName === 'tags/menu' ?
                  data.menu.map((item) => {
                     $(this).find('ul').append('<li><a href=#'+item+'>'+item+'</a></li>');
-                 }):
-                 $(this).find('ul').append('bull')
+                 })
+                 :
+                 data.posts.map((item) => {
+                 $(this).append(item.title+'<br>'+item.cat)
+               })
                 // console.log(data.menu);
                }
              )

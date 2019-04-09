@@ -13,5 +13,19 @@
 
     halo
   </body>
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      function loading() {
+        $('.cms').each(function() {
+            let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/'
+            var tagName = $(this).data('cms');
+            $(this).load(prefix + tagName + '.html?cb=' + (new Date().getTime()));
+          });
+      }
+         loading()
+    });
+  </script>
 </html>

@@ -8,7 +8,7 @@
 
       html, body {
         font-family: 'Work Sans', sans-serif;
-
+        overflow-x: hidden;
         display:table;
         width:100%;
         padding:0;
@@ -51,7 +51,7 @@
         background-color: white;
         position: relative;
         height: 100%;
-        width: 100vw;
+        width:calc(100vw - 7em);
         transition: margin-left 3s cubic-bezier(0.29,-0.71, 0, 1.69);
 
       }
@@ -61,14 +61,14 @@
       }
       .back{
         padding: 3em;
-
+        width:calc(100vw - 7em);
         position: absolute;
         color: white;
       }
       .back-wrapper{
         transition: margin-left 3s cubic-bezier(0.29,-0.71, 0, 1.69);
         overflow: hidden;
-        width:100vw;
+        width:calc(100vw - 3em);
       }
       .flip .frontflip{
         margin-left: 100vw;

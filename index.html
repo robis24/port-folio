@@ -4,56 +4,111 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,800');
+
       html, body {
+        font-family: 'Work Sans', sans-serif;
+
+        display:table;
+        width:100%;
         padding:0;
         margin:0;
       }
       ul {
+        margin:0;
         list-style: none;
       }
+      ul a{
+        text-decoration: none;
+        color: yellow;
+      }
+      ul a:hover{
+        color: gray;
+      }
+      h1{
+        text-transform: uppercase;
+      }
       .post-image{
-        width: 5em;
-        height: 5em;
+        width: 70vw;
+        height: 70vw;
+        background-size: cover;
+      }
+      .main{
+        overflow: hidden;
+        display: table;
+      }
+      .blackflip{
+        color: white;
+        z-index: -2000;
+        position: fixed;
+        width: 100%;
+        height: 600%;
+        background-color: black;
+
+      }
+      .frontflip{
+        padding: 3em;
+        background-color: white;
+        position: relative;
+        height: 100%;
+        transition: clip-path 3s cubic-bezier(0.29,-0.71, 0, 1.69);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+
+      }
+      .flip{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      }
+      .back{
+        padding: 3em;
+
+        position: absolute;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <nav class="cms" data-cms="tags/menu">
-      <ul>
 
-      </ul>
-    </nav>
-    <div class="cms" data-cms="tags/posts">
+    <div class="main">
+      <div class="back">
 
+        <nav class="cms" data-cms="tags/menu">
+          <ul>
+
+          </ul>
+        </nav>
+        <div class="cms" data-cms="tags/posts">
+
+        </div>
+      </div>
+      <div class="blackflip">
+      </div>
+      <div class="frontflip">
+        <nav class="cms" data-cms="tags/menu">
+          <ul>
+
+          </ul>
+        </nav>
+        <div class="cms" data-cms="tags/posts">
+
+        </div>
+      </div>
     </div>
-
-
-    halo
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
 
   <script type="text/javascript">
-    // document.addEventListener("DOMContentLoaded",() => {
-    //
-    //   document.querySelectorAll('.cms').forEach(item => {
-    //     let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
-    //     let tagName = item.getAttribute('data-cms');
-    //      //  fetch(prefix + tagName + '.json?cb=' + (new Date().getTime()))
-    //     fetch(`${prefix}${tagName}.json?cb=${(new Date().getTime())}`)
-    //
-    //       .then(response => {
-    //         return response.json();
-    //       })
-    //       .then(myJson => {
-    //       //  myJson.menu.map((item) => console.log(item));
-    //       })
-    //   });
-    // });
+  $('.back, .frontflip').click(function(){
+    $('.frontflip').toggleClass('flip')
+   //$('.blackflip').css('transform', 'translateX(100vw)')
+  })
 
-
-
+// $('.frontflip').click(function(){
+//   $('.frontflip').toggleClass('flip')
+//  //$('.blackflip').css('transform', 'translateX(100vw)')
+// })
 
 
 

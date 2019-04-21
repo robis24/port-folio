@@ -136,7 +136,7 @@ $('.unactive .post-cont').html('')
 posts.posts.map(function(item) {
   if(item.cat === "social design"){ console.log(item);}
 
-     $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1>'+item.cat+'<div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+     $('.unactive .post-cont').html('<article><h1>'+item.title+'</h1>'+item.cat+'<div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
 });
 }
 

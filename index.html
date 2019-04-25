@@ -107,6 +107,11 @@
       .cms.post-cont {
     column-count: 3;
       }
+      @media (max-width: 922px) {
+        .cms.post-cont {
+      column-count: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -174,7 +179,7 @@ function fillIt(cato) {
    $('.unactive .post-cont').html('')
    posts.posts.map(function(item) {
         if(item.cat === cato.substring(1)){
-           $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1>'+item.cat+'<div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+           $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
         }
    });
    $('.back').toggleClass('unactive');

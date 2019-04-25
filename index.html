@@ -39,6 +39,16 @@
         height: 20em;
         background-size: cover;
       }
+      .open-art{
+        top: 0;
+        left:0;
+        position: absolute;
+        width: 100vw;
+        background-color: white;
+      }
+      .open-art p{
+        display: inline;
+      }
       .main{
         overflow: hidden;
         display: table;
@@ -120,13 +130,24 @@
 
 
   <script type="text/javascript">
-  $('.back, .frontflip').click(function(){
-    $('.back-wrapper').toggleClass('flip');
+
+
+
+
+$('.back, .frontflip').click(function(){
+  //  $('.back-wrapper').toggleClass('flip');
 
 
    //$('.blackflip').css('transform', 'translateX(100vw)')
   })
+//$(document).click(function () {
+    //    !$(this).parent('article').length ?  $('article').removeClass('open-art') : $(this).addClass('open-art');
+  //      });
+$(document).on('click', 'article', function(){
+  !$(this).hasClass('open-art') ? $('article').removeClass('open-art') && $(this).addClass('open-art'): $(this).removeClass('open-art');
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 
+  })
 
 $(document).on('click', 'nav a', function(){
    var link = $(this).attr('href');
@@ -144,6 +165,8 @@ function fillIt(cato) {
    });
    $('.back').toggleClass('unactive');
    $('.frontflip').toggleClass('unactive');
+   $('.back-wrapper').toggleClass('flip');
+
 }
 
 

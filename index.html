@@ -46,8 +46,22 @@
         width: 100vw;
         background-color: white;
       }
+      .open-art{
+        top: 0;
+        left:0;
+        position: absolute;
+        width: 100vw;
+        background-color: white;
+      }
       .open-art p{
-        display: inline;
+        display: block;
+        padding: 3em 5em 3em 3em;
+      }
+      .open-art h1{
+        padding: 1em;
+      }
+      .open-art h3{
+        padding: 1em;
       }
       .main{
         overflow: hidden;
@@ -187,7 +201,7 @@ function fillIt(cato) {
                  if(tagName === 'tags/menu'){data.menu.map(function(item) {
                     elem.find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
                  })}else{posts = data;data.posts.map(function(item) {
-                   elem.append('<article><h1>'+item.title+'</h1>'+item.cat+'<div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+                   elem.append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
                  })}
 
 

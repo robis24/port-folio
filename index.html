@@ -96,11 +96,10 @@
       }
 
       .next-arrow{
-        float: right;
-        margin-right: 50vw;
+
       }
       .back-arrow{
-        float: left;
+
       }
       @media (max-width: 922px) {
         .cms.post-cont {
@@ -176,9 +175,12 @@ $(document).on('click', '.back-arrow', function(){
   if( endcount === 1){
     $('.back-arrow').hide();
   }
+  $('.unactive .dots').append(selected.map(function(item) { return '<span>.</span>'  }));
+  $('.unactive .dots span:nth-child('+endcount+')').css('color','red');
   $('.back').toggleClass('unactive');
   $('.frontflip').toggleClass('unactive');
   $('.back-wrapper').toggleClass('flip');
+
 });
 
 $(document).on('click', '.next-arrow', function(){
@@ -190,9 +192,12 @@ $(document).on('click', '.next-arrow', function(){
     $('.next-arrow').hide();
   }
   $('.unactive article').attr('id',  "nr"+(endcount++));
+  $('.unactive .dots').append(selected.map(function(item) { return '<span>.</span>'  }));
+  $('.unactive .dots span:nth-child('+endcount+')').css('color','red');
   $('.back').toggleClass('unactive');
   $('.frontflip').toggleClass('unactive');
   $('.back-wrapper').toggleClass('flip');
+
 });
 
 $(document).on('click', 'article', function(){
@@ -221,6 +226,8 @@ $(document).on('click', 'article', function(){
   if((selected.length-1) === endcount){
     $('.next-arrow').hide();
   }
+  $('.unactive .dots').append(selected.map(function(item) { return '<span>.</span>'  }));
+  $('.unactive .dots span:nth-child('+endcount+')').css('color','red');
   $('.back').toggleClass('unactive');
   $('.frontflip').toggleClass('unactive');
   // $('.frontflip').css('transition','none');
@@ -266,7 +273,7 @@ function fillItTwo(id) {
   posts.posts.map(function(item) {
     if(item.title === id){
       console.log(id);
-      $('.unactive .post-cont').append('&nbsp;<div class="arrow next-arrow"><i class="fas fa-chevron-right"></i></div><div class="arrow back-arrow"><i class="fas fa-chevron-left"></i></div><article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article><div class="arrow next-arrow"><i class="fas fa-chevron-right"></i></div><div class="arrow back-arrow"><i class="fas fa-chevron-left"></i></div>')
+      $('.unactive .post-cont').append('&nbsp;<span class="arrow back-arrow"><i class="fas fa-chevron-left"></i></span><span class="dots"></span><span class="arrow next-arrow"><i class="fas fa-chevron-right"></i></span><article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article><span class="arrow back-arrow"><i class="fas fa-chevron-left"></i></span><span class="dots"></span><span class="arrow next-arrow"><i class="fas fa-chevron-right"></i></span>')
     }
   });
 

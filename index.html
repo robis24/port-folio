@@ -173,7 +173,9 @@ $(document).on('click', '.back-arrow', function(){
 
   $('.unactive article').attr('id',  "nr"+(endcount--));
   if( endcount === 1){
-    $('.back-arrow').hide();
+    $('.back-arrow').css('opacity', '0');
+    $('.back-arrow').css('pointer-events', 'none');
+
   }
   $('.unactive .dots').append(selected.map(function(item) { return '<span>.</span>'  }));
   $('.unactive .dots span:nth-child('+endcount+')').css('color','red');
@@ -221,7 +223,9 @@ $(document).on('click', 'article', function(){
   fillItTwo(link2);
   $('.unactive article').attr('id',  "nr"+endcount);
   if( endcount === 1){
-    $('.back-arrow').hide();
+    $('.back-arrow').css('opacity', '0');
+    $('.back-arrow').css('pointer-events', 'none');
+
   }
   if((selected.length-1) === endcount){
     $('.next-arrow').hide();

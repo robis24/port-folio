@@ -94,10 +94,13 @@
 
 
       }
-      
+
       .next-arrow{
         float: right;
         margin-right: 50vw;
+      }
+      .back-arrow{
+        float: left;
       }
       @media (max-width: 922px) {
         .cms.post-cont {
@@ -251,7 +254,7 @@ function fillIt(cato) {
   $('.unactive .post-cont').html('')
   posts.posts.map(function(item) {
     if(item.cat === cato.substring(1)){
-      $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+      $('.unactive .post-cont').append('&nbsp;<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
     }
   });
 
@@ -263,7 +266,7 @@ function fillItTwo(id) {
   posts.posts.map(function(item) {
     if(item.title === id){
       console.log(id);
-      $('.unactive .post-cont').append('<div class="arrow next-arrow"><i class="fas fa-chevron-right"></i></div><div class="arrow back-arrow"><i class="fas fa-chevron-left"></i></div><article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+      $('.unactive .post-cont').append('&nbsp;<div class="arrow next-arrow"><i class="fas fa-chevron-right"></i></div><div class="arrow back-arrow"><i class="fas fa-chevron-left"></i></div><article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article><div class="arrow next-arrow"><i class="fas fa-chevron-right"></i></div><div class="arrow back-arrow"><i class="fas fa-chevron-left"></i></div>')
     }
   });
 
@@ -288,7 +291,7 @@ function loading() {
         if(tagName === 'tags/menu'){data.menu.map(function(item) {
           elem.find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
         })}else{posts = data;data.posts.map(function(item) {
-          elem.append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+          elem.append('&nbsp;<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
         })}
 
 

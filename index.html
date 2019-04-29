@@ -31,9 +31,7 @@
       article{
         break-inside: avoid-column;
       }
-      article p{
-        display: none;
-      }
+
       .post-image{
         width: 100%;
         height: 20em;
@@ -176,96 +174,150 @@ $('.back, .frontflip').click(function(){
 //
 //   })
 
-$(document).on('click', 'article', function(){
-  var link = '#'+$(this).find('h3').text();
-  var link2 = $(this).find('h1').text();
+var selected = [];
+var endcount = 0;
 
-  fillItTwo(link2);
-  var nmbr = $(this).index();
+$(document).on('click', '.back-arrow', function(){
+  var cat = $(this).next().find('h3').text();
+  var title = $(this).next().find('h1').text();
+  console.log(endcount-2);
+  fillItTwo(selected[endcount-2].title);
 
-  $('.unactive article:nth-child('+(nmbr+1)+')').find('p').css('display','block');
-
-$('.back').toggleClass('unactive');
-$('.frontflip').toggleClass('unactive');
-// $('.frontflip').css('transition','none');
-// $('.back-wrapper').css('transition','none');
-//$('.back-wrapper').toggleClass('flop');
-// setTimeout( function(){
-//   $('.frontflip').css('transition','');
-//   $('.back-wrapper').css('transition','');
+  $('.unactive article').attr('id',  "nr"+(endcount--));
+  if( endcount === 1){
+    $('.back-arrow').hide();
+  }
+  $('.back').toggleClass('unactive');
+  $('.frontflip').toggleClass('unactive');
   $('.back-wrapper').toggleClass('flip');
- //},3000)
+});
 
-})
+$(document).on('click', '.next-arrow', function(){
+  var cat = $(this).next().find('h3').text();
+  var title = $(this).next().find('h1').text();
+  console.log(endcount);
+  fillItTwo(selected[endcount].title);
+  if((selected.length-1) === endcount){
+    $('.next-arrow').hide();
+  }
+  $('.unactive article').attr('id',  "nr"+(endcount++));
+  $('.back').toggleClass('unactive');
+  $('.frontflip').toggleClass('unactive');
+  $('.back-wrapper').toggleClass('flip');
+});
+
+$(document).on('click', 'article', function(){
+  var link = $(this).find('h3').text();
+  var link2 = $(this).find('h1').text();
+  selected = [];
+  var mc=0;
+  posts.posts/*.filter(function(e){return e.cat === link;})*/.map(function(item) {
+
+    if(item.cat === link){
+      selected.push(item)
+    }
+  });
+  var count = 0;
+  selected.map(function(item) {
+    count++
+    if(item.title === link2){
+      endcount = count;
+    }
+  });
+  fillItTwo(link2);
+  $('.unactive article').attr('id',  "nr"+endcount);
+  if( endcount === 1){
+    $('.back-arrow').hide();
+  }
+  if((selected.length-1) === endcount){
+    $('.next-arrow').hide();
+  }
+  $('.back').toggleClass('unactive');
+  $('.frontflip').toggleClass('unactive');
+  // $('.frontflip').css('transition','none');
+  // $('.back-wrapper').css('transition','none');
+  //$('.back-wrapper').toggleClass('flop');
+  // setTimeout( function(){
+  //   $('.frontflip').css('transition','');
+  //   $('.back-wrapper').css('transition','');
+  $('.back-wrapper').toggleClass('flip');
+  //},3000)
+
+});
 
 $(document).on('click', 'nav a', function(){
-   var link = $(this).attr('href');
+  var link = $(this).attr('href');
   fillIt(link);
   $('.back').toggleClass('unactive');
   $('.frontflip').toggleClass('unactive');
- $('.back-wrapper').toggleClass('flip');
-//  $('.back-wrapper').toggleClass('flip');
-})
+  $('.back-wrapper').toggleClass('flip');
+  //  $('.back-wrapper').toggleClass('flip');
+});
+
+
+
+
+
 
 var posts =[]
 
 function fillIt(cato) {
-   $('.unactive .post-cont').html('')
-   posts.posts.map(function(item) {
-        if(item.cat === cato.substring(1)){
-           $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
-        }
-   });
+  $('.unactive .post-cont').html('')
+  posts.posts.map(function(item) {
+    if(item.cat === cato.substring(1)){
+      $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+    }
+  });
 
 
 }
 
 function fillItTwo(id) {
-   $('.unactive .post-cont').html('')
-   posts.posts.map(function(item) {
-        if(item.title === id){
-          console.log(id);
-           $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
-        }
-   });
+  $('.unactive .post-cont').html('')
+  posts.posts.map(function(item) {
+    if(item.title === id){
+      console.log(id);
+      $('.unactive .post-cont').append('<div class="arrow next-arrow">⮕</div><div class="arrow back-arrow">⬅</div><article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+    }
+  });
 
 
 }
 
 
 
-    $(document).ready(function() {
+$(document).ready(function() {
 
 
-    });
-      function loading() {
-        $('.cms').each(function() {
-            let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
-            var tagName = $(this).data('cms');
-            var jsonUri =  prefix + tagName + '.json?cb=' + (new Date().getTime());
-            var elem = $(this);
-             $.ajax({url:jsonUri, dataType:'json'}).done(
-               function(data) {
-                 console.log(data);
-                 if(tagName === 'tags/menu'){data.menu.map(function(item) {
-                    elem.find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
-                 })}else{posts = data;data.posts.map(function(item) {
-                   elem.append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
-                 })}
+});
+function loading() {
+  $('.cms').each(function() {
+    let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
+    var tagName = $(this).data('cms');
+    var jsonUri =  prefix + tagName + '.json?cb=' + (new Date().getTime());
+    var elem = $(this);
+    $.ajax({url:jsonUri, dataType:'json'}).done(
+      function(data) {
+        console.log(data);
+        if(tagName === 'tags/menu'){data.menu.map(function(item) {
+          elem.find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
+        })}else{posts = data;data.posts.map(function(item) {
+          elem.append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+        })}
 
 
 
 
-                // console.log(data.menu);
-               }
-             )
-             .error( function(data) {
-               console.log('eroor', data);
-             })
-
-        });
+        // console.log(data.menu);
       }
-         loading()
+    )
+    .error( function(data) {
+      console.log('eroor', data);
+    })
+
+  });
+}
+loading()
 
   </script>
 </html>

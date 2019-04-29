@@ -89,12 +89,14 @@
         margin-left: -100vw;
 
       }
+      .flip .frontflip{
+        margin-left: 100vw;
+
+      }
       .flop{
-        margin-left: 0vw;
         margin-top: 900px;
       }
       .flop .frontflip{
-        margin-left: 0vw;
         margin-top: -900px;
 
       }
@@ -109,10 +111,7 @@
         overflow: hidden;
         width:calc(100vw - 3em);
       }
-      .flip .frontflip{
-        margin-left: 100vw;
 
-      }
       .cms.post-cont {
     column-count: 3;
       }
@@ -186,9 +185,14 @@ $(document).on('click', 'article', function(){
 
 $('.back').toggleClass('unactive');
 $('.frontflip').toggleClass('unactive');
-$('.back-wrapper').removeClass('flip');
-
+// $('.frontflip').css('transition','none');
+// $('.back-wrapper').css('transition','none');
 $('.back-wrapper').toggleClass('flop');
+ setTimeout( function(){
+//   $('.frontflip').css('transition','');
+//   $('.back-wrapper').css('transition','');
+  $('.back-wrapper').toggleClass('flip');
+ },3000)
 
 })
 
@@ -197,8 +201,8 @@ $(document).on('click', 'nav a', function(){
   fillIt(link);
   $('.back').toggleClass('unactive');
   $('.frontflip').toggleClass('unactive');
-  $('.back-wrapper').removeClass('flop');
-  $('.back-wrapper').toggleClass('flip');
+ $('.back-wrapper').toggleClass('flip');
+//  $('.back-wrapper').toggleClass('flip');
 })
 
 var posts =[]

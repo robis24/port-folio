@@ -360,6 +360,8 @@ $(document).ready(function() {
 
 });
 function loading() {
+  $('.post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div class="post-image" style="background-image:url()">Download cv</div><ul></ul></section>')
+
   $('.cms').each(function() {
     let prefix = 'https://raw.githubusercontent.com/robis24/port-folio/master/';
     var tagName = $(this).data('cms');
@@ -370,9 +372,17 @@ function loading() {
         console.log(data);
         if(tagName === 'tags/menu'){data.menu.map(function(item) {
           elem.find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
-        })}else{posts = data;data.posts.map(function(item) {
-          elem.append('&nbsp;<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
-        })}
+          $('.shome').find('ul').append('<li><a href="#'+item+'">'+item+'</a></li>');
+        })}else{
+          posts = data;
+
+
+
+        //  data.posts.map(function(item) {
+
+        //  elem.append('&nbsp;<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+        //})
+      }
 
 
 

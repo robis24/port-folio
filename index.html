@@ -178,7 +178,9 @@ $('.back, .frontflip').click(function(){
 
 $(document).on('click', 'article', function(){
   var link = '#'+$(this).find('h3').text();
-  fillIt(link);
+  var link2 = $(this).find('h1').text();
+
+  fillItTwo(link2);
   var nmbr = $(this).index();
 
   $('.unactive article:nth-child('+(nmbr+1)+')').find('p').css('display','block');
@@ -211,6 +213,18 @@ function fillIt(cato) {
    $('.unactive .post-cont').html('')
    posts.posts.map(function(item) {
         if(item.cat === cato.substring(1)){
+           $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
+        }
+   });
+
+
+}
+
+function fillItTwo(id) {
+   $('.unactive .post-cont').html('')
+   posts.posts.map(function(item) {
+        if(item.title === id){
+          console.log(id);
            $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div><p>'+item.content+'</p></article>')
         }
    });

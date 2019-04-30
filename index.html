@@ -324,7 +324,7 @@ $('.fa-bars').click(function(){
 
   }
   $('.menu').toggleClass('open');
-
+  return false;
 
    //$('.blackflip').css('transform', 'translateX(100vw)')
   })
@@ -359,6 +359,12 @@ $(document).on('click', '.back-arrow', function(){
   $('.back-wrapper').toggleClass('flip');
 
 });
+
+$(document).on("click",".main",function() {
+  if($('.menu').hasClass('open')){
+    $('.menu .fa-bars').click();
+   }
+})
 
 $(document).on('click', '.next-arrow', function(){
   var cat = $(this).next().find('h3').text();

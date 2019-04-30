@@ -30,6 +30,8 @@
         text-transform: uppercase;
       }
       article{
+        opacity: 1;
+        transition: opacity 2s;
          cursor: pointer;
       }
       article p{
@@ -197,6 +199,9 @@
  .unactive {
     max-height: 100vh;
     overflow: hidden;
+}
+.unactive article{
+  opacity: 0;
 }
 
       @media (max-width: 922px) {

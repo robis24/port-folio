@@ -18,7 +18,7 @@
         margin:0;
         list-style: none;
       }
-      ul a{
+      a{
         cursor: pointer;
         text-decoration: none;
       }
@@ -100,7 +100,10 @@
 
 
       .arrow{
+        cursor: pointer;
         font-size: 1.2em;
+        margin: 0 -0.5em;
+        padding: 0.5em;
       }
       .dots{
         font-size: 2em;
@@ -111,7 +114,7 @@
          padding: 0.3em;
       }
       .menu{
-        transition: left 3s cubic-bezier(0.29,-0.71, 0, 2.5);
+        transition: left 1s cubic-bezier(0.59, 0, 0, 1.04);
        width: 27em;
         overflow: hidden;
         z-index: 9999;
@@ -127,7 +130,7 @@
 
         }
         .menu nav{
-          transition: margin-left 3s cubic-bezier(0.29,-0.71, 0, 2.5), margin-top 3s cubic-bezier(0.29,-0.71, 0, 1.69);
+          transition: margin-left 1s cubic-bezier(0.59, 0, 0, 1.04);
           width: 900px;
 
           margin-left: 27em;;
@@ -138,10 +141,21 @@
         }
         .menu .fa-bars{
           margin:1.5em;
+          padding: 0.5em;
+          font-weight: 900;
+          margin-left:1em;
 
         }
         .fa-bars{
+          padding: 0.5em;
+          font-weight: 900;
+          margin-left: -0.5em;
+          cursor: pointer;
           font-size: 2em
+        }
+        .fa-file-download{
+          font-size: 5em;
+          padding: 0.5em
         }
         .menu.open nav{
           margin-left: 0px;
@@ -149,10 +163,39 @@
         .menu a{
           color:white;
         }
+        .shome nav{
+          position: relative;
+          display: block;
+          height: 5em;
+        }
+        .shome ul{
+          position: absolute;
+          right: 3em;
 
+        }
+        .shome nav a{
+          margin-left: -2em;100px
+          display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+        }
+ .intro{
+       margin-top: -14em;
+ }
 
       @media (max-width: 922px) {
+        .intro{
+              margin-top: 0em;
+        }
         .cms.post-cont {
+        }
+        .post-image{
+          margin-left: -3em;
+          padding-right: 6em;
         }
       }
     </style>
@@ -194,7 +237,27 @@
           </ul>
         </nav> -->
         <div class="cms post-cont" data-cms="tags/posts">
-
+          &nbsp;
+          <section class="shome">
+            <h1>robis koopmans</h1>
+            <h3>designer</h3>
+          <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" download>
+            <div>Download cv</div>
+            <i class="fas fa-file-download"></i>
+          </a>
+          <article class="intro">
+           <p>
+             Graphic Designer with an intrest in social  bla bla
+             stukje text om ff te testen hoe het staat . meer text meer text meer text
+             Graphic Designer with an intrest in social  bla bla
+             stukje text om ff te testen hoe het staat . meer text meer text meer text
+           <p>
+          </article>
+            <nav>
+              <ul>
+              </ul>
+            </nav>
+          </section>
         </div>
         </div>
     </div>
@@ -327,7 +390,7 @@ $(document).on('click', '.menu nav a', function(){
     var link = etem.attr('href');
     if(link === '#home'){
       $('.unactive .post-cont').html('')
-      $('.unactive .post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div class="post-image" style="background-image:url()">Download cv</div><nav><ul>'+menuu+'</ul></nav></section>');
+      $('.unactive .post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div >Download cv</div><nav><ul>'+menuu+'</ul></nav></section>');
       console.log('hhh'+menuu);
     }else{
     fillIt(link);
@@ -392,7 +455,8 @@ $(document).ready(function() {
 var menuu = '<br>';
 
 function loading() {
-  $('.post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div class="post-image" style="background-image:url()">Download cv</div><nav><ul></ul></nav></section>');
+
+//  $('.post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div class="post-image" style="background-image:url()">Download cv</div><nav><ul>'+menuu+'</ul></nav></section>');
 
 
   $('.cms').each(function() {

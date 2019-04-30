@@ -24,6 +24,7 @@
       }
       ul a:hover{
         color: gray;
+        transform: skewX(30deg);
       }
       h1{
         text-transform: uppercase;
@@ -60,7 +61,7 @@
         position: relative;
         height: 100%;
         width:calc(100vw - 7em);
-        transition: margin-left 3s cubic-bezier(0.29,-0.71, 0, 1.69), margin-top 3s cubic-bezier(0.29,-0.71, 0, 1.69);
+        transition: margin-left 2s cubic-bezier(0.29,-0.71, 0, 1.69), margin-top 2s cubic-bezier(0.29,-0.71, 0, 1.69);
 
       }
       .frontflip a{
@@ -87,10 +88,13 @@
         position: absolute;
         color: white;
       }
+      .back a{
+        color:white;
+      }
       .back-wrapper{
-        transition: margin-left 3s cubic-bezier(0.29,-0.71, 0, 1.69), margin-top 3s cubic-bezier(0.29,-0.71, 0, 1.69);
+        transition: margin-left 2s cubic-bezier(0.29,-0.71, 0, 1.69), margin-top 2s cubic-bezier(0.29,-0.71, 0, 1.69);
         overflow: hidden;
-        width:calc(100vw - 3em);
+        width:calc(100vw - 1em);
       }
 
       .cms.post-cont {
@@ -173,6 +177,10 @@
           right: 3em;
 
         }
+        .shome p{
+          margin: 2em auto;
+          max-width: 25em;
+        }
         .shome nav a{
           margin-left: -2em;100px
           display: block;
@@ -186,6 +194,10 @@
  .intro{
        margin-top: -14em;
  }
+ .unactive {
+    max-height: 100vw;
+    overflow: hidden;
+}
 
       @media (max-width: 922px) {
         .intro{
@@ -237,22 +249,23 @@
           </ul>
         </nav> -->
         <div class="cms post-cont" data-cms="tags/posts">
-          &nbsp;
+
           <section class="shome">
+            &nbsp;
             <h1>robis koopmans</h1>
             <h3>designer</h3>
           <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" download>
             <div>Download cv</div>
             <i class="fas fa-file-download"></i>
           </a>
-          <article class="intro">
+          <div class="intro">
            <p>
              Graphic Designer with an intrest in social  bla bla
              stukje text om ff te testen hoe het staat . meer text meer text meer text
              Graphic Designer with an intrest in social  bla bla
              stukje text om ff te testen hoe het staat . meer text meer text meer text
            <p>
-          </article>
+          </div>
             <nav>
               <ul>
               </ul>
@@ -261,6 +274,9 @@
         </div>
         </div>
     </div>
+    </div>
+    <div class="homestor" style="display:none">
+
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -339,8 +355,7 @@ $(document).on('click', '.next-arrow', function(){
 $(document).on('click', 'article', function(){
   var link = $(this).find('h3').text();
   var link2 = $(this).find('h1').text();
-  topx = this.offsetTop
-  console.log(topx);
+
   selected = [];
   var mc=0;
   posts.posts/*.filter(function(e){return e.cat === link;})*/.map(function(item) {
@@ -358,8 +373,8 @@ $(document).on('click', 'article', function(){
   });
   fillItTwo(link2);
   $('.unactive article').attr('id',  "nr"+endcount);
-  $('.unactive article').css('margin-top', (topx-119)+'px');
-
+  //$('.unactive article').css('margin-top', (topx-119)+'px');
+window.scrollTo(0, 0)
   if( endcount === 1){
     $('.back-arrow').css('opacity', '0');
     $('.back-arrow').css('pointer-events', 'none');
@@ -390,8 +405,8 @@ $(document).on('click', '.menu nav a', function(){
     var link = etem.attr('href');
     if(link === '#home'){
       $('.unactive .post-cont').html('')
-      $('.unactive .post-cont').append('&nbsp;<section class="shome"><h1>robis koopmans</h1><h3>designer</h3><div >Download cv</div><nav><ul>'+menuu+'</ul></nav></section>');
-      console.log('hhh'+menuu);
+      $('.unactive .post-cont').append('<section class="shome">'+$('.homestor').html()+'</section>');
+      $('.shome nav ul').append(menuu);
     }else{
     fillIt(link);
     }
@@ -450,8 +465,11 @@ function fillItTwo(id) {
 
 $(document).ready(function() {
 
+  $('.homestor').html($('.shome').html());
+
 
 });
+
 var menuu = '<br>';
 
 function loading() {
@@ -487,6 +505,7 @@ function loading() {
 
         // console.log(data.menu);
       }
+
     )
     .error( function(data) {
       console.log('eroor', data);

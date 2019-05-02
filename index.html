@@ -22,9 +22,13 @@
         cursor: pointer;
         text-decoration: none;
       }
-      ul a:hover{
+      .shome a:hover{
         color: gray;
-        transform: skewX(30deg);
+        transform: skewY(-2deg);
+
+      }
+      .contact a:hover{
+        color: gray;
       }
       h1{
         text-transform: uppercase;
@@ -161,8 +165,9 @@
         }
         .fa-file-download{
           font-size: 5em;
-          padding: 0.5em
+          padding: 0.5em;
         }
+
         .menu.open nav{
           margin-left: 0px;
         }
@@ -188,7 +193,8 @@
           margin-left: -2em;
           display: block;
     font-size: 1.17em;
-
+    border-left: 0.1em solid black;
+    padding-left: 2em;
     font-weight: bold;
         }
  .intro{
@@ -207,6 +213,10 @@
   top:1.7em;
   padding: 0.7em;
   font-size: 1.7em
+}
+.spacer{
+  height: 2.4em;
+  display: block;
 }
 
       @media screen and (max-width: 922px) {
@@ -279,8 +289,8 @@
         <div class="cms post-cont" data-cms="tags/posts">
 
           <section class="shome">
+            <span class="spacer"></span>
 
-            &nbsp;
             <h1>robis koopmans</h1>
             <h3>designer</h3>
           <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" >
@@ -474,10 +484,11 @@ var posts =[]
 
 
 function fillIt(cato) {
-  $('.unactive .post-cont').html('')
+  $('.unactive .post-cont').html('');
+  $('.unactive .post-cont').append('<span class="spacer"></span>');
   posts.posts.map(function(item) {
     if(item.cat === cato.substring(1)){
-      $('.unactive .post-cont').append('&nbsp;<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
+      $('.unactive .post-cont').append('<article><h1>'+item.title+'</h1><h3>'+item.cat+'</h3><div class="post-image" style="background-image:url('+item.img+')"></div></article>')
     }
   });
 

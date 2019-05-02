@@ -42,6 +42,24 @@
         margin: 2em auto;
         max-width: 25em;
       }
+      article p img:nth-child(1){
+        float: left;
+
+        margin-left: -12em;
+
+      }
+      article p img:nth-child(2){
+        float: right;
+
+        margin-left: 12em;
+
+      }
+      article p img{
+
+        height: 15em;
+
+        padding: 1em;
+      }
       .post-image{
         width: 100%;
         height: 20em;
@@ -228,6 +246,14 @@
         .post-image{
           margin-left: -3em;
           padding-right: 6em;
+        }
+        article p img:nth-child(1), article p img:nth-child(2){
+          height: auto;
+    max-width: 25em;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
         }
       }
 

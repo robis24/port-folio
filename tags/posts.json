@@ -27,7 +27,7 @@
     "title"  :"guldemond fietsatelier",
     "cat"    :"web devolopment",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond.jpg",
-    "content":"Fietsatelier Guldemond is het bedrijf van Ruud Guldemond en staat voor degelijkheid, ambacht en hergebruik. De website moest het gevoel krijgen van een oude fiets courant en je kan er je eigen fiets samenstellen. Een fiets die opgebouwd is uit een stevig hergebruikt fietsframe waarbij je verschillende onderdelen, opties en kleuren kan kiezen.    <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond1.jpg />Voor het Fietsatelier was door een illustrator een hele mooi flyer en logos ontworpen de illustraties en kleuren hebben de basis gevormd voor de website. Voor de fiets configurator is een andere illustrator betrokken om de verschillende fietsonderdelen te illustreren.    <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond2.png />De website is geschreven in HTML/CSS/JavaScript en is via de REST api verbonden met een Wordpress CMS waar door middel van Custom Post Types een overzichtelijke omgeving gecreëerd is waardoor de website geheel zelf te onderhouden is door het Fietsatelier."
+    "content":"bbb"
   },
   {
     "title"  :"hotel de watertoren",

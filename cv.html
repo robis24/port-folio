@@ -11,16 +11,19 @@
       padding:0;
       font-family: 'Open Sans', sans-serif;
     }
+    .wrapper{
+      margin:1em;
+    }
       .side{
-        width: 20vw;
+        width: calc(20vw + 28px);
         display: inline-block;
         padding: 1em;
         }
       .main{
-        width: calc(80vw - 45px - 4em);
+        width: calc(80vw - 45px - 7em);
         float: right;
         display: inline-block;
-        padding: 1em;
+        padding: 1em 1em 1em 2em;
         border-left:.05em solid lightgray;
 
 
@@ -55,7 +58,7 @@
       .main .sub{
         color:darkgray;
       }
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1251px) {
         .wrapper{
           margin: 0 auto;
           max-width: 1200px;
@@ -64,7 +67,7 @@
           width:240px
         }
         .main{
-          width: 880px;
+          width: 870px;
         }
         .naam{
           font-size: 36px;
@@ -76,10 +79,10 @@
           font-size: 10vw
         }
         .side{
-          width: calc(100vw - 4em);
+          width: calc(100vw - 6em);
         }
         .main{
-        width: calc(100vw - 4em);
+        width: calc(100vw - 6em);
         border:none;
         float: none;
         }

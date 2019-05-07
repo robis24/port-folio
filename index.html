@@ -477,7 +477,7 @@ window.scrollTo(0, 0)
     $('.back-arrow').css('pointer-events', 'none');
 
   }
-  if((selected.length-1) === endcount){
+  if((selected.length) === endcount){
     $('.next-arrow').hide();
   }
   $('.unactive .dots').append(selected.map(function(item) { return '<span>.</span>'  }));

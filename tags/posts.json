@@ -25,19 +25,19 @@
   },
   {
     "title"  :"guldemond fietsatelier",
-    "cat"    :"web devolopment",
+    "cat"    :"web development",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond.jpg",
     "content":"Fietsatelier Guldemond is het bedrijf van Ruud Guldemond en staat voor degelijkheid, ambacht en hergebruik. De website moest het gevoel krijgen van een oude fiets courant en je kan er je eigen fiets samenstellen. Een fiets die opgebouwd is uit een stevig hergebruikt fietsframe waarbij je verschillende onderdelen, opties en kleuren kan kiezen.    <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond1.gif />Voor het Fietsatelier was door een illustrator een hele mooi flyer en logos ontworpen de illustraties en kleuren hebben de basis gevormd voor de website. Voor de fiets configurator is een andere illustrator betrokken om de verschillende fietsonderdelen te illustreren.    <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/guldemond2.png />De website is geschreven in HTML/CSS/JavaScript en is via de REST api verbonden met een Wordpress CMS waar door middel van Custom Post Types een overzichtelijke omgeving gecreëerd is waardoor de website geheel zelf te onderhouden is door het Fietsatelier."
   },
   {
     "title"  :"hotel de watertoren",
-    "cat"    :"web devolopment",
+    "cat"    :"web development",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/watertoren.jpg",
     "content":"Hotel en Restaurant de watertoren is een klein familiebedrijf. De watertoren is een uniek plek om te overnachten. De familie had een duidelijk beeld hoe zei de website graag zouden zien. Twee kolommen, één voor het hotel en één voor de restaurant. Met in elke kolom een aantal blokken die zei zelf kunnen aanpassen qua inhoud, kleur, achtergrond en volgorde. <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/watertoren1.gif />    Op de desktop hebben de verschillende blokken een speelse afwisseling in formaat, waarbij op mobiel de blokken allemaal  een gelijk formaat hebben. De website is gemaakt met PHP/HTML/CSS/JavaScript  in de vorm van een Custom Wordpress Thema waardoor de website makkelijk zelf te onderhouden is voor het familiebedrijf. <br><br>    <img src=https://raw.githubusercontent.com/robis24/port-folio/master/img/watertoren2.gif />    Ook de menukaarten zijn via deze CMS te maken en aan te passen. In de CSS van de menukaarten zijn print media queries zodat deze direct via de website naar PDF of printer kunnen. Dit scheelt het bedrijf dubbel werk."
   },
   {
     "title"  :"iconoclash",
-    "cat"    :"web devolopment",
+    "cat"    :"web development",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/iconoclash.jpg",
     "content":"Iconoclash is een stichting die street-art verzorgd op gebouwen en andere objecten. Van hele grote kunstwerken op bijvoorbeeld gebouwen van de gemeente tot aan elektriciteitshuisjes en bouwschotten. De opdracht was een website die alle street-art locaties in van de stichting in kaart zou brengen en meer informatie kon vinden over de verschillende kunstwerken. <br><br>    Er is gekozen om gebruik te maken van de Google Maps API. Tijdens het laden van de website worde alle verschillende locaties uit een Wordpress CMS gehaald en door middel van JavaScript op de kaart geplaatst. <br><br>    De website bestaat uit 3 onderdelen, de kaart, het menu en de beschrijvingen. Deze 3 onderdelen schuiven in uit zicht zonder dat de pagina herladen wordt"
   },

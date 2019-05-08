@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title></title>
-    <style media="screen">
+    <style>
     body, html{
       width: 100%;
       height: 100%;
@@ -138,6 +138,16 @@
           display: none;
         }
       }
+      @media print {
+ body, html{
+   width: 1000px;
+   height: 1300px;
+   overflow: hidden;
+ }
+ a.pdf{
+   display: none;
+ }
+  }
 
 
     </style>

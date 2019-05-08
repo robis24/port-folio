@@ -11,6 +11,17 @@
       padding:0;
       font-family: 'Open Sans', sans-serif;
     }
+    .fas, .sub{
+      color:#ff7f7f;
+    }
+    .main{
+      border-left:.1em solid lightgray;
+    }
+    .main h1{
+      border-bottom: .05em solid lightgray;
+
+    }
+
     ul{
       list-style-type: square;
     }
@@ -43,7 +54,6 @@
         float: right;
         display: inline-block;
         padding: 1em 1em 1em 2em;
-        border-left:.05em solid lightgray;
 
 
       }
@@ -65,7 +75,6 @@
       }
       .main h1{
         text-transform: uppercase;
-        border-bottom: .05em solid lightgray;
         padding-bottom: .2em;
       }
       .main p span{
@@ -74,8 +83,16 @@
       .main .date{
         float: right;
       }
-      .main .sub{
-        color:darkgray;
+
+      .pdf{
+        padding:  .9em;
+        text-align: center;
+      }
+      .pdf small{
+        color: darkgray;
+      }
+      .pdf i{
+        margin-top: .2em;
       }
       @media screen and (min-width: 1251px) {
         .wrapper{
@@ -208,11 +225,18 @@
           <li>Permacultuur</li>
           <li>Social Design</li>
         </ul>
-        <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" >
-          <div>Download cv</div>
-          <i class="fas fa-file-download"></i>
+        <a class="pdf" href="javascript: w=window.open('https://robis24.github.io/port-folio/files/cv.pdf');" target="_blank">
+
+    <!--    <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" >   -->
+          <p>Download of print<br>
+          <span>
+            <i class="fas fa-file-pdf"></i><br>
+            <small>cv.pdf</small>
+          </span>
+          </p>
         </a>
       </div>
+
     </div>
     <div class="main">
       <h1>werkervaring</h1>
@@ -280,12 +304,19 @@
         <span class="date">2004 - 2007</span>
         <span class="sub">initiatiefnemer, vrijwilliger, bewoner</span>
       </p>
-      <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" >
-        <div>Download cv</div>
-        <i class="fas fa-file-download"></i>
+      <a class="pdf" href="javascript: w=window.open('https://robis24.github.io/port-folio/files/cv.pdf');" target="_blank">
+
+  <!--    <a href="https://raw.githubusercontent.com/robis24/port-folio/master/files/cv.pdf" >   -->
+        <p>Download of print
+        <span>
+          <i class="fas fa-file-pdf"></i><br>
+          <small>cv.pdf</small>
+        </span>
+        </p>
       </a>
     </div>
 
     </div>
+
   </body>
 </html>

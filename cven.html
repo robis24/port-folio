@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+    <style>
+    body, html{
+      width: 100%;
+      height: 100%;
+      margin:0;
+      padding:0;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .fas, .sub{
+      color:#ff7f7f;
+    }
+    .main{
+      border-left:.05em solid lightgray;
+    }
+    .main h1{
+      border-bottom: calc(.05em / 2) solid lightgray;
+
+    }
+
+    ul{
+      list-style-type: square;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      color: gray;
+    }
+    a .fas{
+      font-size: 4em;
+    }
+    .main a{
+      display: none;
+    }
+    .side a{
+      display: inline;
+    }
+    .wrapper{
+      margin:1em;
+    }
+      .side{
+        width: calc(20vw + 28px);
+        display: inline-block;
+        padding: 1em;
+        }
+      .main{
+        width: calc(80vw - 45px - 7em);
+        float: right;
+        display: inline-block;
+        padding: 1em 1em 1em 2em;
+
+
+      }
+      .naam{
+        font-size: 3vw;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 0.67em;
+      }
+      .side .personalia .fas {
+        margin-right: .6em
+      }
+      .side .vaardigheden tr td, .side .talen tr td{
+        width: 20vw;
+      }
+      .side .vaardigheden .fas, .side .talen .fas, .side .vaardigheden .far, .side .talen .far{
+      font-size: .9em;
+      margin: .05em
+      }
+      .main h1{
+        text-transform: uppercase;
+        padding-bottom: .2em;
+      }
+      .main p span{
+        display: block;
+      }
+      .main .date{
+        float: right;
+      }
+
+      .pdf{
+        padding:  .9em;
+        text-align: center;
+      }
+      .pdf small{
+        color: darkgray;
+      }
+      .pdf i{
+        margin-top: .2em;
+      }
+
+
+
+      @media screen and (min-width: 1251px) {
+        .wrapper{
+          margin: 0 auto;
+          max-width: 1200px;
+        }
+        .side{
+          width:240px
+        }
+        .main{
+          width: 870px;
+        }
+        .naam{
+          font-size: 36px;
+        }
+
+      }
+      @media screen and (max-width: 700px) {
+        .naam{
+          font-size: 10vw
+        }
+        .side{
+          width: calc(100vw - 4em);
+          overflow: hidden;
+
+        }
+        .main{
+          width: calc(100vw - 4em);
+  border: none;
+  float: none;
+  padding: 1em;
+  overflow: hidden;
+        }
+        .side .vaardigheden tr td, .side .talen tr td{
+         width: 45vw;
+        }
+        .main a{
+          display: inline;
+        }
+        .side a{
+          display: none;
+        }
+      }
+      @media print {
+ body, html{
+   width: 1000px;
+   height: 1300px;
+   overflow: hidden;
+ }
+ a.pdf{
+   display: none;
+ }
+  }
+
+
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+  <body>
+    <div class="wrapper">
+    <div class="side">
+      <div class="naam">
+        Robis Koopmans
+      </div>
+      <div class="personalia">
+      <h1>Personal details</h1>
+      <table>
+        <tr><td><i class="fas fa-user"></i></td><td>Robis Seidran Koopmans</td></tr>
+        <tr><td><i class="fas fa-home"></i></td><td>Noordendijk 411, 3312 AG Dordrecht, NL</td></tr>
+        <tr><td><i class="fas fa-phone"></i></td><td>+31 6 53 56 52 56</td></tr>
+        <tr><td><i class="fas fa-envelope"></i></td><td>Robis24@gmail.com</td></tr>
+        <tr><td><i class="fas fa-calendar-alt"></i></td><td>Date of birth: March 24 1985</td></tr>
+        <tr><td><i class="fas fa-map-marker-alt"></i></td><td>Birth place: Dordrecht, NL</td></tr>
+      </table>
+      </div>
+      <div class="vaardigheden">
+        <h1>Skills</h1>
+        <table>
+          <tr>
+            <td>Git</td>
+            <td><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Python</td>
+            <td><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Linux</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Blender 3D</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Autodesk Maya</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Inkscape</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Adobe Illustrator</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Adobe Photoshop</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Microsoft Office</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+
+        </table>
+      </div>
+      <div class="talen">
+        <h1>Languages</h1>
+        <table>
+          <tr>
+            <td>Dutch</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></td>
+          </tr>
+          <tr>
+            <td>English</td>
+            <td><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="hobbys">
+        <h1>Hobbies and interests</h1>
+        <ul>
+          <li>Permaculture</li>
+          <li>Social Design</li>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="main">
+      <h1>WORK EXPERIENCE</h1>
+      <p>
+        <strong>Het Vogelnest, Dordrecht</strong>
+        <span class="date">2016 - present</span>
+        <span class="sub">Part-time social cultural employee</span>
+        <span>Activities; web design, web development, printing, branding, concept development, volunteer coordination, cooking, transport</span></p>
+      <p>
+        <strong>JVO Foundation, Zwijndrecht</strong>
+        <span class="date">2017 - 2018</span>
+        <span class="sub">Part-time marketing and communications employee, graphic designer</span>
+        <span>Activities; web design, web development, print design, branding, social media, communication and coordination</span></p>
+      <p>
+        <strong>Freegan Kitchen, Dordrecht</strong>
+        <span class="date">2015 - 2017</span>
+        <span class="sub">Organizer, initiator, independent cook</span>
+        <span>Activities; concept development, volunteer coordination, cooking, transport</span></p>
+      <p>
+        <strong>Freelance 3D, 2D Illustrator /Designer, Dordrecht</strong>
+        <span class="date">2011 - 2013</span>
+        <span class="sub">Illustrator, designer, DTP</span>
+        <span>Activities; design logos and illustrations, printing and corporate identity</span></p>
+      <p>
+        <strong>Various jobs, Dordrecht</strong>
+        <span class="date">2003 - 2007</span>
+        <span>Among others. PCM (delivery person), Network / HVC / Sita (loader), TNT (sorter), Florensis (sorter), Gebr. St. Nicolaas (construction site cleaner), GrootVerzet (taxi driver), Avedko (mechanic)</span></p>
+      <h1>EDUCATION</h1>
+      <p>
+        <strong>HBO, Bachelor of Design, Fashion/Apparel Design (achieved)</strong>
+        <span class="date">2007 - 2012</span>
+        <span class="sub">Willem de Kooning Academy Rotterdam University of Applied Sciences, NL</span>
+      </p>
+      <p>
+        <strong>Minor 3D Computer Graphics (achieved)</strong>
+        <span class="date">2009</span>
+        <span class="sub">Willem de Kooning Academy Rotterdam University of Applied Sciences, NL</span>
+      </p>
+      <h1>Awards</h1>
+      <p>
+        <strong>Best of 2012, selection Carlo Wijnands, New Talent Exhibition</strong>
+        <span class="date">2012</span>
+        <span class="sub">Modefabriek Amsterdam, Eindhoven Dutch Design Foundation Exhibition</span>
+      </p>
+      <h1>internships</h1>
+      <p>
+        <strong>Marga Weimans, Rotterdam</strong>
+        <span class="date">2011 - 2012</span>
+        <span class="sub">Assistant Designer</span>
+        <span>Activities; 3D visualizations, developing prints, developing and drawing patterns, sewing and molding, communication with producers and suppliers, research and experimentation</span></p>
+      <h1>SUBSIDIARY ACTIVITIES</h1>
+      <p>
+        <strong>Het Vogelnest, Dordrecht</strong>
+        <span class="date">2016 - present</span>
+        <span class="sub">Initiator, volunteer, resident</span>
+      </p>
+      <p>
+        <strong>WeggeefKast, Dordrecht</strong>
+        <span class="date">2014 - present</span>
+        <span class="sub">Initiator, volunteer</span>
+      </p>
+      <p>
+        <strong>WeggeefWinkel, Dordrecht</strong>
+        <span class="date">2004 - 2007</span>
+        <span class="sub">Initiator, volunteer, resident</span>
+      </p>
+
+    </div>
+
+    </div>
+
+  </body>
+</html>

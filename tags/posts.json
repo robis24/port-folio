@@ -45,18 +45,17 @@
     "title"  :"jvo academie",
     "cat"    :"graphic design",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/jvo.jpg",
-    "content":"Counting objects: 2, done. Delta compression using up to 4 threads.Compressing objehhcts: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0)Counting objects: 2, done. Delta compression using up to 4 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0) remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master"
+    "content":"Stichting JVO is een juridisch adviesbureau voor verschillende seminars maakte ik websites, banners, flyers en logo's"
   },
   {
     "title"  :"8x9m",
     "cat"    :"graphic design",
     "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/8x9m.jpg",
-    "content":"Counting objects: 2, done. Delta compression using up to 4 threads.Compressing objehhcts: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0)Counting objects: 2, done. Delta compression using up to 4 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0) remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master"
+    "content":"In 2019 organiseerde ik een experimenteel kunstfestival in een aantal sloopflats genaamd 8x9m. Acht makers, van verschillende kunstdisciplines, namen een flat onder handen. Het thema: vervreemding. Het resultaat: een onwerkelijke combinatie van muziek, video, performance, beeld en ontheemding van de realiteit. Naast het organiseren ontwikkelde ik ook de vormgeving, posters en website."
   },
   {
-    "title"  :"fashion design",
-    "cat"    :"others",
-    "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/freegan.jpg",
-    "content":"Counting objects: 2, done. Delta compression using up to 4 threads.Compressing objehhcts: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0)Counting objects: 2, done. Delta compression using up to 4 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (2/2), 213 bytes | 213.00 KiB/s, done. Total 2 (delta 1), reused 0 (delta 0) remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master remote: Resolving deltas: 100% (1/1), completed with 1 local object. To github.com:robis24/port-folio.git 1eec36b..f87dec9  master -> master"
-  }
+    "title"  :"graduation collection",
+    "cat"    :"fashion design",
+    "img"    :"https://raw.githubusercontent.com/robis24/port-folio/master/img/graduation.jpg",
+    "content":"via METROPOLISM.com: Robis Koopmans liet met zijn collectie Somatography een opvallende experimenteerdrift zien. Het materiaalgebruik (veel plastic) en kleurenpalet (pastel en neontinten) in combinatie met de tribe-achtige visagie, leken geïnspireerd op de cybersubcultuur – kleurrijk, synthetisch en futuristisch. Ook in zijn ontwerpproces toonde Koopmans zich als cyber-adept; een drietal driedimensionale bodyscans werkte hij virtueel uit door middel van opensource software. De uitdaging was om vanuit mijn virtuele ontwerpen echte tastbare kleding te vervaardigen. Dat is gelukt en ik ben erg tevreden over de pasvorm van sommige stukken, aldus Koopmans die een pluim verdient voor lef. http://metropolism.com/reviews/crisis-roklengte-lang-langer-lan/"  }
   ]}
